@@ -1,0 +1,23 @@
+{
+  "name": "readmegenerator",
+  "version": "1.0.0",
+  "description": "Creates a ReadMe File for users",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anierva95/ReadMeGenerator.git"
+  },
+  "author": "Anthony Nierva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anierva95/ReadMeGenerator/issues"
+  },
+  "homepage": "https://github.com/Anierva95/ReadMeGenerator#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "inquirer": "^7.0.4"
+  }
+}

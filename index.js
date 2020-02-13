@@ -11,7 +11,7 @@ inquirer
     },
     {
       type: "input",
-      message:"What is the tittle of your project?",
+      message:"What is the title of your project?",
       name: "title"
     },
     {
@@ -37,22 +37,18 @@ inquirer
   ]).then(function({ username, credits, usage, installation, description, title }) {
 
     const queryURL = `https://api.github.com/users/${username}`;
+
+    axios.get(queryURL).then(function(res) {
+      const userAvatar = res.data.avatar_url;
+
     credits = credits + "\n\n";
     usage = usage + "\n\n";
     installation = installation + "\n\n";
     description = description + "\n\n";
     title = title + "\n\n"
 
-    const data = `# Title \n\n ${title} ## Description  \n\n ${description} ## Table of Contents \n\n - [Installation](Intallation)\n\n - [Usage](Usage) \n\n - [Credits](Credits) \n\n ## Installation \n\n ${installation} ## Usage \n\n ${usage} ## Credits \n\n ${credits}`;
+    const data = `# Title \n\n ${title} ## Description  \n\n ${description} ## Table of Contents \n\n - [Installation](Intallation)\n\n - [Usage](Usage) \n\n - [Credits](Credits) \n\n ## Installation \n\n ${installation} ## Usage \n\n ${usage} ## Credits \n\n ${credits} ${userAvatar}`;
 
     fs.writeFile("ReadMe.md", data, function(err) {
-      console.log(err);
-    });
-    axios.get(queryURL).then(function(res) {
-    console.log("Here is my data!!!")
-    console.log(res.data.avatar_url);
-    const userAvatar = res.data.avatar_url;
-    return userAvatar;
-
-    fs.writeFile("log.txt",)
-  })})
+      if (err)  console.log(err);
+    })})});

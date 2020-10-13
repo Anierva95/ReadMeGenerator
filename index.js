@@ -44,23 +44,25 @@ inquirer
       message: "Provide an E-mail for those with questions about your app.",
       name: "email"
     }
-  ]).then(function({ username, credits, usage, installation, description, title, tests, email }) {
+  ]).then(function(data) {
+    const useData = data;
 
-    const queryURL = `https://api.github.com/users/${username}`;
+    const queryURL = `https://api.github.com/users/${data.username}`;
 
     axios.get(queryURL).then(function(res) {
     const userAvatar = res.data.avatar_url;
 
-    credits = credits + "\n\n";
-    usage = usage + "\n\n";
-    installation = installation + "\n\n";
-    description = description + "\n\n";
-    title = title + "\n\n";
-    tests = tests + "\n\n";
-    email = email + "\n\n";
+    credits = useData.credits + "\n\n";
+    usage = useData.usage + "\n\n";
+    installation = useData.installation + "\n\n";
+    description = useData.description + "\n\n";
+    title = useData.title + "\n\n";
+    tests = useData.tests + "\n\n";
+    email = useData.email + "\n\n";
 
     const data = `# Title \n\n ${title} ## Description  \n\n ${description} ## Table of Contents \n\n - [Installation](Intallation)\n\n - [Usage](Usage) \n\n - [Credits](Credits) \n\n - [Tests](Tests) \n\n - [Contact](Contact) \n\n ## Installation \n\n ${installation} ## Usage \n\n ${usage} ## Credits \n\n ${credits} ## Tests \n\n ${tests} ## Contact \n\n ${email} ![UserImage](${userAvatar})`;
 
     fs.writeFile("ReadMe.md", data, function(err) {
       if (err)  console.log(err);
-    })})});
+    })})
+  });

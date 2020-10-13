@@ -1,10 +1,10 @@
 # Title 
 
- Charity website
+ gsr
 
  ## Description  
 
- This chartiy website will allow me to view and create charities.
+ sg
 
  ## Table of Contents 
 
@@ -20,22 +20,22 @@
 
  ## Installation 
 
- npm i
+ sfdg
 
  ## Usage 
 
- node server to start server then open web browser 
+ sdg
 
  ## Credits 
 
- friends
+ sdfg
 
  ## Tests 
 
- none
+ sdfg
 
  ## Contact 
 
- fake@fake.com
+ sdf
 
  ![UserImage](https://avatars2.githubusercontent.com/u/46223963?v=4)

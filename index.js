@@ -49,7 +49,7 @@ inquirer
     const queryURL = `https://api.github.com/users/${username}`;
 
     axios.get(queryURL).then(function(res) {
-      const userAvatar = res.data.avatar_url;
+    const userAvatar = res.data.avatar_url;
 
     credits = credits + "\n\n";
     usage = usage + "\n\n";
